@@ -3,7 +3,7 @@ const app = express();
 const env = require('dotenv');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-mongoose.connect(`mongodb+srv://arhitbt:admin@cluster0.fhlzae8.mongodb.net/?retryWrites=true&w=majority`,{
+mongoose.connect(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.fhlzae8.mongodb.net/?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
